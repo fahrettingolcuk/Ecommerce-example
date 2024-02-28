@@ -32,6 +32,7 @@
 		8955EC382B8F7B400074CFC0 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC372B8F7B400074CFC0 /* DetailBuilder.swift */; };
 		8955EC3A2B8FC2A10074CFC0 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC392B8FC2A10074CFC0 /* StepperView.swift */; };
 		8955EC3D2B8FC7F30074CFC0 /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC3C2B8FC7F30074CFC0 /* CartItemView.swift */; };
+		8955EC3F2B8FEF920074CFC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955EC3E2B8FEF920074CFC0 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		8955EC372B8F7B400074CFC0 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		8955EC392B8FC2A10074CFC0 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		8955EC3C2B8FC7F30074CFC0 /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
+		8955EC3E2B8FEF920074CFC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				8955EC252B8F5DFF0074CFC0 /* CartManager.swift */,
+				8955EC3E2B8FEF920074CFC0 /* DatabaseManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				8955EBD12B8F45B70074CFC0 /* SceneDelegate.swift in Sources */,
 				8955EC1B2B8F52F20074CFC0 /* UIView + Extensions.swift in Sources */,
 				8955EC192B8F4DF80074CFC0 /* AddToCartView.swift in Sources */,
+				8955EC3F2B8FEF920074CFC0 /* DatabaseManager.swift in Sources */,
 				8955EC352B8F764A0074CFC0 /* DetailViewController.swift in Sources */,
 				8955EC3D2B8FC7F30074CFC0 /* CartItemView.swift in Sources */,
 				8955EC232B8F59520074CFC0 /* CollectionViewCell + Extensions.swift in Sources */,
