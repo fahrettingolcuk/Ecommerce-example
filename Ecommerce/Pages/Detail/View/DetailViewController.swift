@@ -98,8 +98,8 @@ final class DetailViewController: UIViewController {
     let stack = UIStackView(arrangedSubviews: [totalPriceStack, addToCart])
     stack.axis = .horizontal
     stack.spacing = .spacing8
-    stack.distribution = .fill
-    stack.alignment = .leading
+    stack.distribution = .fillEqually
+    stack.alignment = .fill
     stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
   }()
