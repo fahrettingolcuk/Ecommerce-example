@@ -72,8 +72,10 @@ struct DatabaseManager {
               let title = object.value(forKey: "title") as? String,
               let description = object.value(forKey: "desc") as? String,
               let image = object.value(forKey: "image") as? String,
+              let brand = object.value(forKey: "brand") as? String,
+              let model = object.value(forKey: "model") as? String,
               let quantity = object.value(forKey: "quantity") as? Int else { return nil }
-        items.append(Item(id: id, title: title, description: description, image: image, price: price))
+        items.append(Item(id: id, title: title, description: description, image: image, price: price, brand: brand, model: model))
         basket[id] = quantity
       }
     }

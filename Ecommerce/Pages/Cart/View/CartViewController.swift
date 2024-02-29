@@ -111,7 +111,6 @@ extension CartViewController: UICollectionViewDataSource {
       for: indexPath
     ) as? CartItemView
     else { return UICollectionViewCell() }
-    print(CartManager.sharedInstance.itemList[indexPath.row])
     cell.configure(product: CartManager.sharedInstance.itemList[indexPath.row])
     cell.onTap = { [weak self] product, isIncrement in
       CartManager.sharedInstance.action(with: product, type: isIncrement ? .increase : .decrease)

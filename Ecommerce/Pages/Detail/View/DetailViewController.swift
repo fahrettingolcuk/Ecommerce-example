@@ -25,7 +25,6 @@ final class DetailViewController: UIViewController {
   private lazy var header: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: .fontXL, weight: .bold)
-    label.text = "iPhone 14 pro max lorem ipsum"
     label.textColor = .black
     return label
   }()
@@ -35,7 +34,7 @@ final class DetailViewController: UIViewController {
     stack.axis = .horizontal
     stack.spacing = .spacing8
     stack.distribution = .fill
-    stack.alignment = .leading
+    stack.alignment = .center
     stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
   }()
@@ -45,7 +44,6 @@ final class DetailViewController: UIViewController {
     image.contentMode = .scaleAspectFit
     image.translatesAutoresizingMaskIntoConstraints = false
     image.backgroundColor = .gray
-    image.image = UIImage(named: "iphone")
     return image
   }()
 
@@ -142,7 +140,7 @@ final class DetailViewController: UIViewController {
       self.headerStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       self.headerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .spacing8),
       self.headerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      self.header.heightAnchor.constraint(equalToConstant: Constants.headerHeight),
+      self.headerStack.heightAnchor.constraint(equalToConstant: Constants.headerHeight),
       self.itemImage.topAnchor.constraint(equalTo: self.headerStack.bottomAnchor),
       self.itemImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .spacing8),
       self.itemImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.spacing8),
@@ -154,7 +152,7 @@ final class DetailViewController: UIViewController {
       self.contentStack.topAnchor.constraint(equalTo: self.itemImage.bottomAnchor),
       self.contentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .spacing8),
       self.contentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.spacing8),
-      self.contentStack.bottomAnchor.constraint(equalTo: self.bottomStack.topAnchor)
+      self.contentStack.bottomAnchor.constraint(equalTo: self.bottomStack.topAnchor, constant: -.spacing16)
     ])
   }
 
@@ -165,6 +163,7 @@ final class DetailViewController: UIViewController {
 
 extension DetailViewController {
   func updateUI(item: Item) {
+    self.header.text = item.title
     self.itemLabel.text = item.title
     self.itemDescription.text = item.description
     let basketValue = CartManager.sharedInstance.getItem(with: item.id)
@@ -173,6 +172,12 @@ extension DetailViewController {
       self.priceView.text = "\(item.price) ₺"
     } else {
       self.priceView.text = "\(CartManager.sharedInstance.getTotalPriceProduct(with: item.id)) ₺"
+    }
+    if item.image.isEmpty {
+      self.itemImage.image = UIImage(named: "")
+    } else {
+      let url = URL(string: item.image)
+      self.itemImage.kf.setImage(with: url)
     }
   }
 }

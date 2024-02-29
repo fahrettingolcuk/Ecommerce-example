@@ -17,7 +17,7 @@ class TabViewController: UITabBarController {
     let cartVC = UINavigationController(rootViewController: CartViewController())
     cartVC.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart.fill"), tag: 1)
     cartVC.tabBarItem.badgeValue = "\(CartManager.sharedInstance.itemCount)"
-    let listingVC = UINavigationController(rootViewController: ListingViewController())
+    let listingVC = UINavigationController(rootViewController: ListingBuilder().view())
     listingVC.tabBarItem = UITabBarItem(title: "Listing", image: UIImage(systemName: "star.fill"), tag: 2)
     self.viewControllers = [listingVC, cartVC]
   }

@@ -108,20 +108,13 @@ extension ProductCell {
   func configure(item: Item) {
     itemLabel.text = item.title
     priceView.text = "\(item.price) ₺"
-    itemImage.image = UIImage(named: "iphone")
     let basketValue = CartManager.sharedInstance.getItem(with: item.id)
     addToCart.configure(shouldShowDefaultView: basketValue == 0, product: item)
-//    if item.image.isEmpty {
-//      itemImage.image = UIImage(named: "n11")
-//    } else {
-//      let url = URL(string: item.image)
-//      itemImage.kf.setImage(with: url)
-//    }
+    if item.image.isEmpty {
+      itemImage.image = UIImage(named: "")
+    } else {
+      let url = URL(string: item.image)
+      itemImage.kf.setImage(with: url)
+    }
   }
-}
-
-#Preview {
-  let cell = ProductCell(frame: .init(origin: .zero, size: .init(width: 150, height: 300)))
-  cell.configure(item: .mock)
-  return cell
 }
