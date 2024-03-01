@@ -20,6 +20,7 @@ It is an e-commerce application with some basic rules.
 - Loading statement
 - No data case handling
 - Filter feature added
+- Search products
 
 
 ## Previews 
