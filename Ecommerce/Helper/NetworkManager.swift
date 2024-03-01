@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct NetworkManager {
+protocol NetworkManaging {
+  func genericRequest<T: Codable>(url: String, type: T.Type) async throws -> T?
+}
+
+struct NetworkManager: NetworkManaging {
   enum NetworkError: Error {
     case undefined
     case badUrl

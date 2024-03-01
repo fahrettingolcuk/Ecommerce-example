@@ -15,7 +15,8 @@ protocol ListingBuilding {
 struct ListingBuilder: ListingBuilding {
   func view() -> UIViewController {
     let view = ListingViewController()
-    let viewModel = ListingViewModel(view: view)
+    let networkManager = NetworkManager()
+    let viewModel = ListingViewModel(view: view, networkManager: networkManager)
     view.viewModel = viewModel
     return view
   }

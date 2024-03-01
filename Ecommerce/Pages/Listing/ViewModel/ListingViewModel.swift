@@ -16,9 +16,11 @@ class ListingViewModel {
   var isSearchActive: Bool = false
   var filterAttributes: ([String], [String]) = ([], [])
   private weak var view: ListingView?
+  private let networkManager: NetworkManaging
 
-  init(view: ListingView?) {
+  init(view: ListingView?, networkManager: NetworkManaging) {
     self.view = view
+    self.networkManager = networkManager
     Task(priority: .userInitiated) {
       await getProducts()
       view?.updateUI()
@@ -28,9 +30,12 @@ class ListingViewModel {
   func getProducts() async {
     do {
       view?.setLoader(true)
-      let data = try await NetworkManager().genericRequest(url: "https://5fc9346b2af77700165ae514.mockapi.io/products", type: [ProductResponse].self)
+      let data = try await networkManager.genericRequest(url: "https://5fc9346b2af77700165ae514.mockapi.io/products", type: [ProductResponse].self)
       guard let fetchedData = data else { return }
       allItems = fetchedData.map { mapToItem(product: $0) }
+      if fetchedData.count < 4 {
+        edgeArray.1 = fetchedData.count - 1
+      }
       items = Array(allItems[edgeArray.0 ... edgeArray.1])
       edgeArray = (edgeArray.0 + 4, edgeArray.1 + 4)
       view?.setLoader(false)
@@ -52,6 +57,7 @@ class ListingViewModel {
 
   func searchedItems(text: String) {
     searchedItems.removeAll()
+    items.removeAll()
     if text.isEmpty {
       edgeArray = (0, 3)
       items = Array(allItems[edgeArray.0 ... edgeArray.1])

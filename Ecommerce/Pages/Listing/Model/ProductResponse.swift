@@ -15,3 +15,17 @@ struct ProductResponse: Codable {
   let brand: String
   let createdAt: String
 }
+
+extension ProductResponse {
+  static func mock(title: String) -> ProductResponse {
+    .init(name: title, id: "", image: "", price: "", description: "", model: "", brand: "", createdAt: "")
+  }
+
+  static func mock(brand: String) -> ProductResponse {
+    .init(name: "", id: "", image: "", price: "", description: "", model: "", brand: brand, createdAt: "")
+  }
+
+  static var mock: ProductResponse {
+    .init(name: "", id: "", image: "", price: "", description: "", model: "", brand: "", createdAt: "")
+  }
+}
