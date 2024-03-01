@@ -72,7 +72,3 @@ extension StepperView {
     valueLabel.text = "\(value)"
   }
 }
-
-#Preview {
-  StepperView()
-}

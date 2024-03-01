@@ -209,7 +209,6 @@ private extension ListingViewController {
 
 extension ListingViewController: FilterAttributesDelegate {
   func applyAttributes(brands: [String], models: [String]) {
-    print(brands, models)
     viewModel?.setFilterItems(brands: brands, models: models)
   }
 }

@@ -86,7 +86,6 @@ extension FilterSectionCell: UITableViewDataSource {
 
 extension FilterSectionCell: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(indexPath.row)
     self.sectionItem?.items[indexPath.row].isChecked.toggle()
     guard let sectionItem = sectionItem else { return }
     onSelectAttributes?(sectionItem.header, sectionItem.items[indexPath.row].title)

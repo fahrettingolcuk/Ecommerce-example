@@ -74,9 +74,3 @@ extension AddToCartView {
     }
   }
 }
-
-#Preview {
-  let atc = AddToCartView()
-  atc.configure(shouldShowDefaultView: false, product: .mock)
-  return atc
-}
