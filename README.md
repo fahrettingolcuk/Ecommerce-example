@@ -14,6 +14,7 @@ It is an e-commerce application with some basic rules.
 ## 🖥 TECHNOLOGIES & FRAMEWORK & PATTERNS
 
 - Swift
+- UIKit
 - MVVM
 - Core Data
 - Loading statement
