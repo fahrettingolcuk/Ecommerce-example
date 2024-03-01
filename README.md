@@ -25,9 +25,9 @@ It is an e-commerce application with some basic rules.
 
 ## Previews 
 
-| List Screen | Filter Screen | Cart Screen |
-| --- | --- | --- |
-| ![Preview](images/3.png) | ![Preview](images/2.png) | ![Preview](images/1.png) |
+| List Screen | Filter Screen | Cart Screen | Detail Screen |
+| --- | --- | --- | --- |
+| ![Preview](images/3.png) | ![Preview](images/2.png) | ![Preview](images/1.png) | ![Preview](images/4.png) |
 
 ## License
 ```
