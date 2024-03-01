@@ -29,5 +29,5 @@ It is an e-commerce application with some basic rules.
 
 ## License
 ```
-Copyright (c) 2021 Fahreddin GÖLCÜK
+Copyright (c) 2024 Fahrettin GÖLCÜK
 ```
