@@ -19,8 +19,8 @@ It is an e-commerce application with some basic rules.
 - Core Data
 - Loading statement
 - No data case handling
-- Filter feature added
-- Search products
+- Search & Filter products feature
+- Unit tests
 
 
 ## Previews 
